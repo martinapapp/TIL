@@ -74,5 +74,13 @@
     3. turn : *input old user msg, old text response,prev user msg, prev user msg* then **output text response**
     and so on.
 
-
-
+## Streaming AI response
+- improves UX 
+- why stream? :
+    1. UI feels frozen while the model works
+    2. Since models generate text token by token, streaing fits perfectly
+    3. Streamed responses reduce a user's perceived waiting time since they get immidiate visual feedback
+    4. *without stream* : one response - full assistant message content available, easy to render, but feels slow
+    5. `stream : true`
+    6. *with stream* : **chunks**, the API sends chunks of text as the model generates them, the full message only exists if you build it from chunks. (we get a `choices[0].delta.content`)
+    7. chunk is *asynchronous iterable*: `for await ... of` loop (sequence of values that arrives overtime)
