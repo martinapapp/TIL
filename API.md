@@ -34,14 +34,19 @@ pre-written code that does cool stuff:
     We don’t need to know how these work but can use them. (can check out the how in opensource)
 ```
 ## JSON = JavaScript Object Notation
-language of the data of the web
-mostly have an object `{}` or objects in an array `[{}, {}, ..]`
-    * ` {“key”:”value”} `
-    * key always have “”
-    * `value = ”string”` || boolean || number || [array of items]
-in devtools: 
-    * Inspect/Network/XHR/click one item/Preview/open arrow that shows a numeratic key and value
-    * XHR: AJAX request which gets a json as a response
+Language of the data of the web.
+
+Mostly have an object `{}` or objects in an array `[{}, {}, ..]`
+
+    - ` {“key”:”value”} `
+    - key always have “”
+    - `value = ”string”` || boolean || number || [array of items]
+    
+in devtools:
+
+    - Inspect/Network/XHR/click one item/Preview/open arrow that shows a numeratic key and value
+    - XHR: AJAX request which gets a json as a response
+    
 fetch syntax and Asynchronous JS
 ```
 fetch(“url”)
@@ -164,4 +169,5 @@ nested(max 4 levels) endpoints and url parameters:
 query strings:
     /bikes?type=mountain&brand=trek
 ```
+
 

@@ -22,10 +22,13 @@ exapmle: **Boiling pasta**
 *6. asynch step: com to boil is long (doing other stuff meanwhile)*
 7. ...continue synchronous steps
 ```
-"asynchronous javascript": it rather has **callback mechanism** in place to run commands in different order to make things more efficient. Javascript is single-threaded, meaning only 1 command can run at a time (for true asynchronus behavour needs multiple threads).
 
 ## Callback Functions
+
+"asynchronous javascript": it rather has **callback mechanism** in place to run commands in different order to make things more efficient. Javascript is single-threaded, meaning only 1 command can run at a time (for true asynchronus behavour needs multiple threads).
+
 Functions are a first-class/citizen Objects in Javascript.
+
 Making a copy:
 ```
 let myFn = function(param){}
@@ -34,9 +37,13 @@ let myFnCopy = myFn(arg)
 
 ## Promises
 Promises are opertions that normally take a bit of time will be eventually finish runinning. (I owe you with a response).
-Fetch requests returns a promise object
+
+Fetch requests returns a promise object.
+
 example: **Job interview**
+
 promise: we will get back to you within a week
+
 Stages:
 1. **pending**: yet to be completed
 2. **fulfilled/resolved**: wa completed as promised
@@ -103,6 +110,7 @@ try{
 or 
 
 - when programmer manually calls: `Promise.reject()`
+
 
 
 
