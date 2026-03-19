@@ -42,7 +42,24 @@
     - referring to v1 chat completion API is not outdated, just the first API to be stable and widly adopted
 - `system`:
     - separating model's rules and user's request
-
+    - make it context aware
+    - **few-shot** (or multi-shot) prompting
+        - *shot*: example
+        - zero-shot: no examples
+        - few-shot: a small number of examples
+        - **note!** : cost trade
+    - control **temperature**:
+        - *how bold the model is* about choosing next tokens
+        - every time a model generates text, it's choosing between many possible tokens
+        - you can think of temperature as how risky the model is willing to be when choosing its next word
+        - higher temperature: model takss creaative risks
+        - lower temperature: model plays it safer
+    -control **top_p**:
+        - *how selective the model* is about the possible next words
+        -top_p: 1.0 -> default (considers every possibility)
+        -top_p: 0.9 -> ignores least likely options
+        -top_p: 0.5 -> very conservative
+    - *guidlines*: rarely touch values of temperature or top_p once things are stable, tune early, never extreme, mostly tune only temperature
 
 ## Limiting tokens
 - token: a chunk of text the model processes
@@ -83,4 +100,22 @@
     4. *without stream* : one response - full assistant message content available, easy to render, but feels slow
     5. `stream : true`
     6. *with stream* : **chunks**, the API sends chunks of text as the model generates them, the full message only exists if you build it from chunks. (we get a `choices[0].delta.content`)
-    7. chunk is *asynchronous iterable*: `for await ... of` loop (sequence of values that arrives overtime)
+    7. chunk is **asynchronous iterable**: `for await ... of` loop (sequence of values that arrives overtime)
+    8. **note!** edge case: last chunk can be `undefiend`/`null`, we need to handle it.
+
+## Respones API
+~ chat completions API
+- can perform complex web seraching and synthesize those results into your response with just one line.
+- change in syntax : `openai.responses.create({})`, `input: []`, `response.output_text`
+- easier access, cleaner code
+- structured outputs with schemas
+- have access  to **web search tool** - live information from the web and can control it, not training data
+- **agentic function calling**
+
+## Backend Migration Steps
+
+1. Frontend makes request to the server with your user's prompt
+2. Server handles the request and prepares a messages array
+3. Server  makes a chat completions request to the Model Provider
+4. Server extracts the AI Model's response and sends it to the Frontend
+5. Frontend converts the Markdown string to sanitized
