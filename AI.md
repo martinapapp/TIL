@@ -1,8 +1,20 @@
 # ARTIFICAL INTELLIGENCE
 
-##Index
+## Index
 
-##AI Model:
+- **Fundamentals**
+    - [AI Model](#ai-model)
+    - [What does the openai client do?](#what-does-the-openai-client-do?)
+    - [Roles in AI Conversations](#roles-in-ai-conversations)
+    - [Limiting tokens](#limiting-tokens)
+    - [What Language Models Do](#what-language-models-do)
+    - [Messages array](#messages-array)
+    - [Streaming AI response](#streaming-ai-response)
+    - [Respones API](#respones-api)
+    - [Backend Migration Steps](#backend-migration-steps)
+
+## AI Model
+
 - greeat at recognizing and generating patterns
 - can read and generate text
 - also called an LLM
@@ -32,7 +44,8 @@
 - saves us from writing raw HTTP calls
 - never put on the frontend your env vars!!
 
-## Roles in AI Conversations:
+## Roles in AI Conversations
+
 - `user` : who is talking to an AI model
 - `assistant` : AI model
 - user sending reqs in objects `{}`
@@ -73,13 +86,14 @@
     - the danger of exceeding the context window: 
     > if the total number of tokens you send in your input messages array exceeds the context window size, than the request doesn't degrade gracefully, it just fails.
 
-## What Language Models Do:
+## What Language Models Do
 - process tokens
 - have no nuilt-in converstaion history
 - only see the context you send
 - analogy : calculator can use the previous result, but when push AC button it rests
 
-## Messages array: 
+## Messages array
+
 - contains the context you send to the model
 - the model evaulates as : Given this entire messages array, what comes next?
 - model not remembers, each API call starts fresh
@@ -92,6 +106,7 @@
     and so on.
 
 ## Streaming AI response
+
 - improves UX 
 - why stream? :
     1. UI feels frozen while the model works
