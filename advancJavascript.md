@@ -8,6 +8,7 @@
     - [Timers](#timers)
     - [Modules & Built-ins](#modules--built-ins)
 - [Methods and Loops](#methods-and-loops)
+- [Function Exressions and Parameters](#function-expressions-and-parameters)
 
 ## Foundation
 
@@ -366,6 +367,30 @@ const regexFlags = /wifi/gi     // true
 const isMatch = regex.test(text)
 
 ```
+
+## Function Exressions and Parameters
+
+### Function Exressions vs. Function Declarations vs. Arrow Functions
+
+Function Declarations:
+- Hoisted, can be called anywhere
+- `function functionName(){}`
+
+Function expressions:
+- NOT hoisted
+- cleaner and easier to read (arguably)
+- depends on the dev team prefernces
+- `const functionName = function(){}`
+
+Arrow Functions:
+- ultra concise function
+- mostly with function expressions for methods (`const cards = arr.map( param => {})`)
+- no param : `() => {//complex logic}` or `() => //simple logic`
+- 1 param : `(param) => {}` or `param => {}`
+- 2 or param : `(param1, param1) => {}`
+
+
+### Function Parameters
 
 
 
