@@ -392,6 +392,9 @@ Arrow Functions:
 
 ### Function Parameters
 
+- defalut parameters : `function createProfile(name = "Anonymous"){}`
+- rest parameter : `function users(permissionLevel, ...names){}` - returns array, always the last param
+
 
 
 
